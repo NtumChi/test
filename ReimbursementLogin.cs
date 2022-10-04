@@ -10,19 +10,27 @@
 
     //the standard login
     public void loginMenu(){
+        string userId = "";
+
         Console.WriteLine("Hello, welcome to Revature-test Reimbursement Application.\n\nLogin\nUsername:\n\nIf you are a new user please type 'yes'.");
+
         String ans = Console.ReadLine();
+
         if (ans.Equals("yes", StringComparison.OrdinalIgnoreCase)){
             newUserLogin();
             //create new userId and save
-            string userId = "test";
-            ReimbursementForm form = new ReimbursementForm(userId);
+            userId = "test";
         }else{
             this.userName = Console.ReadLine();
             Console.WriteLine("Login\nPassword:");
             this.userPassword = Console.ReadLine();
             //pull username/password info to get userId
-            string userId = "test";
+            userId = "test";
+        }
+        //if userId matches manager then use ManagerMenu
+        if (userId == "manager"){
+            ManagerMenu menu = new ManagerMenu(userId);
+        }else{
             ReimbursementForm form = new ReimbursementForm(userId);
         }
 
