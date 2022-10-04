@@ -1,0 +1,15 @@
+C:\Users\Chi Ntum\Documents\revature\P1\bin\Debug\net6.0\P1.exe
+C:\Users\Chi Ntum\Documents\revature\P1\bin\Debug\net6.0\P1.deps.json
+C:\Users\Chi Ntum\Documents\revature\P1\bin\Debug\net6.0\P1.runtimeconfig.json
+C:\Users\Chi Ntum\Documents\revature\P1\bin\Debug\net6.0\P1.dll
+C:\Users\Chi Ntum\Documents\revature\P1\bin\Debug\net6.0\P1.pdb
+C:\Users\Chi Ntum\Documents\revature\P1\obj\Debug\net6.0\P1.csproj.AssemblyReference.cache
+C:\Users\Chi Ntum\Documents\revature\P1\obj\Debug\net6.0\P1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chi Ntum\Documents\revature\P1\obj\Debug\net6.0\P1.AssemblyInfoInputs.cache
+C:\Users\Chi Ntum\Documents\revature\P1\obj\Debug\net6.0\P1.AssemblyInfo.cs
+C:\Users\Chi Ntum\Documents\revature\P1\obj\Debug\net6.0\P1.csproj.CoreCompileInputs.cache
+C:\Users\Chi Ntum\Documents\revature\P1\obj\Debug\net6.0\P1.dll
+C:\Users\Chi Ntum\Documents\revature\P1\obj\Debug\net6.0\refint\P1.dll
+C:\Users\Chi Ntum\Documents\revature\P1\obj\Debug\net6.0\P1.pdb
+C:\Users\Chi Ntum\Documents\revature\P1\obj\Debug\net6.0\P1.genruntimeconfig.cache
+C:\Users\Chi Ntum\Documents\revature\P1\obj\Debug\net6.0\ref\P1.dll

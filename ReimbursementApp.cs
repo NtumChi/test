@@ -16,13 +16,34 @@
             newUserLogin();
         }else{
             this.userName = Console.ReadLine();
-            //more
+            Console.WriteLine("Login\nPassword:");
+            this.userPassword = Console.ReadLine();
+            //pull username/password info
         }
 
     }
 
     //a login for new users
     public void newUserLogin(){
-        Console.WriteLine("");
+        Console.WriteLine("If you are a manager please enter 'yes' again, otherwise enter your new Username:");
+        String ans = Console.ReadLine();
+        if(ans.Equals("yes", StringComparison.OrdinalIgnoreCase)){
+            managerLogin();
+        }else{
+            this.userName = ans;
+            Console.WriteLine("Please enter your Password:");
+            this.userPassword = Console.ReadLine();
+            //add database call for users
+        }
     }
+    
+    //a login for managers
+    public void managerLogin(){
+        Console.WriteLine("Please enter your desired Username:");
+        this.userName = Console.ReadLine();
+        Console.WriteLine("Please enter your Password:");
+        this.userPassword = Console.ReadLine();
+        //database call for managers
+    }
+
 }
