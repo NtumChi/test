@@ -1,4 +1,4 @@
-﻿class ReimbursementApp{
+﻿class ReimbursementLogin{
     
     private string userName;
     private string userPassword;
@@ -14,11 +14,16 @@
         String ans = Console.ReadLine();
         if (ans.Equals("yes", StringComparison.OrdinalIgnoreCase)){
             newUserLogin();
+            //create new userId and save
+            string userId = "test";
+            ReimbursementForm form = new ReimbursementForm(userId);
         }else{
             this.userName = Console.ReadLine();
             Console.WriteLine("Login\nPassword:");
             this.userPassword = Console.ReadLine();
-            //pull username/password info
+            //pull username/password info to get userId
+            string userId = "test";
+            ReimbursementForm form = new ReimbursementForm(userId);
         }
 
     }
