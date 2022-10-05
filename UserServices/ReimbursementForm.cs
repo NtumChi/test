@@ -1,4 +1,5 @@
-class ReimbursementForm{
+namespace UserServices;
+public class ReimbursementForm{
 
     //possibly come up with class for ticketNumbers
     private int ticketNumber{get; set;}

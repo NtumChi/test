@@ -1,4 +1,6 @@
-﻿class ReimbursementLogin{
+﻿using UserServices;
+
+class ReimbursementLogin{
     
     private string userName;
     private string userPassword;
@@ -21,7 +23,7 @@
             //create new userId and save
             userId = "test";
         }else{
-            this.userName = Console.ReadLine();
+            this.userName = ans;
             Console.WriteLine("Login\nPassword:");
             this.userPassword = Console.ReadLine();
             //pull username/password info to get userId

@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Login/1.0.0": {
+        "dependencies": {
+          "UserServices": "1.0.0"
+        },
+        "runtime": {
+          "Login.dll": {}
+        }
+      },
+      "UserServices/1.0.0": {
+        "runtime": {
+          "UserServices.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Login/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UserServices/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

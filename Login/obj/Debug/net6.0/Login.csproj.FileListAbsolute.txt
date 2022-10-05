@@ -3,3 +3,16 @@ C:\Users\Chi Ntum\Documents\revature\P1\Login\obj\Debug\net6.0\Login.GeneratedMS
 C:\Users\Chi Ntum\Documents\revature\P1\Login\obj\Debug\net6.0\Login.AssemblyInfoInputs.cache
 C:\Users\Chi Ntum\Documents\revature\P1\Login\obj\Debug\net6.0\Login.AssemblyInfo.cs
 C:\Users\Chi Ntum\Documents\revature\P1\Login\obj\Debug\net6.0\Login.csproj.CoreCompileInputs.cache
+C:\Users\Chi Ntum\Documents\revature\P1\Login\bin\Debug\net6.0\Login.exe
+C:\Users\Chi Ntum\Documents\revature\P1\Login\bin\Debug\net6.0\Login.deps.json
+C:\Users\Chi Ntum\Documents\revature\P1\Login\bin\Debug\net6.0\Login.runtimeconfig.json
+C:\Users\Chi Ntum\Documents\revature\P1\Login\bin\Debug\net6.0\Login.dll
+C:\Users\Chi Ntum\Documents\revature\P1\Login\bin\Debug\net6.0\Login.pdb
+C:\Users\Chi Ntum\Documents\revature\P1\Login\bin\Debug\net6.0\UserServices.dll
+C:\Users\Chi Ntum\Documents\revature\P1\Login\bin\Debug\net6.0\UserServices.pdb
+C:\Users\Chi Ntum\Documents\revature\P1\Login\obj\Debug\net6.0\Login.csproj.CopyComplete
+C:\Users\Chi Ntum\Documents\revature\P1\Login\obj\Debug\net6.0\Login.dll
+C:\Users\Chi Ntum\Documents\revature\P1\Login\obj\Debug\net6.0\refint\Login.dll
+C:\Users\Chi Ntum\Documents\revature\P1\Login\obj\Debug\net6.0\Login.pdb
+C:\Users\Chi Ntum\Documents\revature\P1\Login\obj\Debug\net6.0\Login.genruntimeconfig.cache
+C:\Users\Chi Ntum\Documents\revature\P1\Login\obj\Debug\net6.0\ref\Login.dll
