@@ -1,0 +1,12 @@
+C:\Users\Chi Ntum\Documents\revature\P1\UserServices\bin\Debug\net6.0\UserServices.deps.json
+C:\Users\Chi Ntum\Documents\revature\P1\UserServices\bin\Debug\net6.0\UserServices.dll
+C:\Users\Chi Ntum\Documents\revature\P1\UserServices\bin\Debug\net6.0\UserServices.pdb
+C:\Users\Chi Ntum\Documents\revature\P1\UserServices\obj\Debug\net6.0\UserServices.csproj.AssemblyReference.cache
+C:\Users\Chi Ntum\Documents\revature\P1\UserServices\obj\Debug\net6.0\UserServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chi Ntum\Documents\revature\P1\UserServices\obj\Debug\net6.0\UserServices.AssemblyInfoInputs.cache
+C:\Users\Chi Ntum\Documents\revature\P1\UserServices\obj\Debug\net6.0\UserServices.AssemblyInfo.cs
+C:\Users\Chi Ntum\Documents\revature\P1\UserServices\obj\Debug\net6.0\UserServices.csproj.CoreCompileInputs.cache
+C:\Users\Chi Ntum\Documents\revature\P1\UserServices\obj\Debug\net6.0\UserServices.dll
+C:\Users\Chi Ntum\Documents\revature\P1\UserServices\obj\Debug\net6.0\refint\UserServices.dll
+C:\Users\Chi Ntum\Documents\revature\P1\UserServices\obj\Debug\net6.0\UserServices.pdb
+C:\Users\Chi Ntum\Documents\revature\P1\UserServices\obj\Debug\net6.0\ref\UserServices.dll

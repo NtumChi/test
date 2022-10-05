@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "UserServices/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/UserServices.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UserServices.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "UserServices/1.0.0": {
+      "type": "project",
+      "path": "../UserServices/UserServices.csproj",
+      "msbuildProject": "../UserServices/UserServices.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "UserServices >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Chi Ntum\\.nuget\\packages\\": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\UserServices\\UserServices.csproj": {
+              "projectPath": "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\UserServices\\UserServices.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

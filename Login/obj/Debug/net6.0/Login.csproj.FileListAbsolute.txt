@@ -1,0 +1,5 @@
+C:\Users\Chi Ntum\Documents\revature\P1\Login\obj\Debug\net6.0\Login.csproj.AssemblyReference.cache
+C:\Users\Chi Ntum\Documents\revature\P1\Login\obj\Debug\net6.0\Login.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chi Ntum\Documents\revature\P1\Login\obj\Debug\net6.0\Login.AssemblyInfoInputs.cache
+C:\Users\Chi Ntum\Documents\revature\P1\Login\obj\Debug\net6.0\Login.AssemblyInfo.cs
+C:\Users\Chi Ntum\Documents\revature\P1\Login\obj\Debug\net6.0\Login.csproj.CoreCompileInputs.cache
