@@ -4,6 +4,7 @@ class ReimbursementLogin{
     
     private string userName;
     private string userPassword;
+    private string userId;
 
     //runs the initial application
     public void run(){
@@ -12,7 +13,6 @@ class ReimbursementLogin{
 
     //the standard login
     public void loginMenu(){
-        string userId = "";
 
         Console.WriteLine("Hello, welcome to Revature-test Reimbursement Application.\n\nLogin\nUsername:\n\nIf you are a new user please type 'yes'.");
 
@@ -49,6 +49,12 @@ class ReimbursementLogin{
             Console.WriteLine("Please enter your Password:");
             this.userPassword = Console.ReadLine();
             //add database call for users
+            userId = userName + userPassword;
+            Employees emp = new Employees();
+            if(emp.Check(userId)==false){
+                //write message telling them to enter user/pass again
+                Console.WriteLine();
+            }
         }
     }
     

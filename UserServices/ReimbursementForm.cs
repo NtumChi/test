@@ -15,8 +15,6 @@ public class ReimbursementForm{
         //save amount with ticket number for userId
         Console.WriteLine("Are there any details you would like to add.\n\nDetails:");
         this.details = Console.ReadLine();
-        //save details with ticket number for userId
-        //save the form as open
     }
 
 }
