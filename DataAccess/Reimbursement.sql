@@ -17,3 +17,5 @@ Create Table ReimbursementForm(
 
 Insert into Employees values (UserName, Password);
 Insert into Managers values (UserName, Password);
+SELECT * FROM Employees;
+SELECT * FROM Managers;

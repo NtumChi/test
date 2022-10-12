@@ -85,9 +85,6 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\DataAccess\\DataAccess.csproj"
-              },
               "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\UserServices\\UserServices.csproj": {
                 "projectPath": "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\UserServices\\UserServices.csproj"
               }
@@ -144,7 +141,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\DataAccess\\DataAccess.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
