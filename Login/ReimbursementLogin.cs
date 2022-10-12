@@ -19,6 +19,8 @@ class ReimbursementLogin{
 
         String ans = Console.ReadLine();
 
+        string user = "";
+
         if (ans.Equals("yes", StringComparison.OrdinalIgnoreCase)){
             newUserLogin();
             //create new userId and save
@@ -27,14 +29,12 @@ class ReimbursementLogin{
             Console.WriteLine("Login\nPassword:");
             this.userPassword = Console.ReadLine();
             userId = userName + userPassword;
-            string user = "";
-            if (emp.ManagerExists(userId)==true){
+            if (emp.Exists(userId)==false){
                 user = "manager";
             }
-
         }
         //if userId matches manager then use ManagerMenu
-        if (userId == "manager"){
+        if (user == "manager"){
             ManagerMenu menu = new ManagerMenu(userId);
         }else{
             ReimbursementForm form = new ReimbursementForm(userId);
@@ -55,10 +55,11 @@ class ReimbursementLogin{
             //add database call for users
             userId = userName + userPassword;
             //checks if userId exists already
-            while(emp.EmployeeExists(userId)==true){
+            while(emp.Exists(userId)==true){
                 //write message telling them to enter user/pass again
                 Console.WriteLine("");
             }
+            emp.Add(userId);
 
         }
     }
@@ -70,11 +71,12 @@ class ReimbursementLogin{
         Console.WriteLine("Please enter your Password:");
         this.userPassword = Console.ReadLine();
 
-        userId = "M+"+ userName + userPassword;
-        while(emp.ManagerExists(userId)==true){
+        userId = "m+" + userName + userPassword;
+        while(emp.Exists(userId)==true){
             //write message telling them to enter user/pass again
             Console.WriteLine("");
         }
+        emp.Add(userId);
     }
 
 }

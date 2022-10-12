@@ -3,11 +3,6 @@ Create Table Employees(
     Password nvarchar(100),
     UserId nvarchar(100) primary key,
 );
-Create Table Managers(
-    UserName nvarchar(100),
-    Password nvarchar(100),
-    UserId nvarchar(100) primary key,
-);
 Create Table ReimbursementForm(
     TicketNumber int,
     Amount money,
@@ -16,6 +11,5 @@ Create Table ReimbursementForm(
 );
 
 Insert into Employees values (UserName, Password);
-Insert into Managers values (UserName, Password);
 SELECT * FROM Employees;
-SELECT * FROM Managers;
+drop table Employees;

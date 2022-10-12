@@ -2,7 +2,7 @@
 using Microsoft.Data.SqlClient;
 public class Data
 {
-    public string GetEId(string userId){
+    public string GetId(string userId){
         //List<ReimbursementForm> forms = new List<ReimbursementForm>();
         //connect to database
             //define connection, tell where to find server and credentials(provided via connection string)
@@ -18,7 +18,7 @@ public class Data
         connection.Open();
         //replace select with "insert into <table> (columns) values (@inputname)"
         //then command.Parameters.AddWithValue("@inputname", input);
-        SqlCommand command = new SqlCommand("SELECT * FROM Employees;", connection);
+        SqlCommand command = new SqlCommand("SELECT * FROM ReimbursementForm;", connection);
         //command.ExecuteNonQuery
         SqlDataReader reader = command.ExecuteReader();
         if(reader.HasRows){
@@ -45,27 +45,14 @@ public class Data
         return ans;
     }
 
-    public string GetMId(string userId){
-        string? ans = null;
+    public void Add(string userId){
         SqlConnection connection = new SqlConnection("Server=tcp:revserver-test.database.windows.net,1433;Initial Catalog=testDB;Persist Security Info=False;User ID=test-admin;Password=Sunshot7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         connection.Open();
-
-        SqlCommand command = new SqlCommand("SELECT * FROM Managers;", connection);
-        SqlDataReader reader = command.ExecuteReader();
-        if(reader.HasRows){
-            while(reader.Read()){
-                string id = (string) reader["UserId"];
-                decimal amount = (decimal) reader["Amount"];
-                string details = (string) reader["details"];
-
-                if (id == userId){
-                    ans = id;
-                }
-            }
-            connection.Close();
-        }
-        return ans;
+        SqlCommand command = new SqlCommand("Insert into ReimbursementForm(UserId) values (@UserId);", connection);
+        command.Parameters.AddWithValue("@UserId", userId);
+        command.ExecuteNonQuery();
     }
+
 }
 
 
