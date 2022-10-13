@@ -1,15 +1,14 @@
-Create Table Employees(
-    UserName nvarchar(100),
-    Password nvarchar(100),
-    UserId nvarchar(100) primary key,
-);
+
 Create Table ReimbursementForm(
     TicketNumber int,
     Amount money,
     Details nvarchar(Max),
-    UserId nvarchar(100) foreign key references Employees(UserId)
+    Status nvarchar(50),
+    UserId nvarchar(100) primary key foreign key references ReimbursementForm(UserId)
 );
 
-Insert into Employees values (UserName, Password);
-SELECT * FROM Employees;
-drop table Employees;
+Insert into ReimbursementForm(UserId) values (@UserId);
+SELECT * FROM ReimbursementForm;
+drop table ReimbursementForm;
+Update ReimbursementForm(UserId) set UserId = @NewUserId where UserId = @UserId;
+Update ReimbursementForm(TicketNumber, Amount, Details, Status) set TicketNumer = @TicketNumber, Amount = @Amount, Details = @Details, Status = 'Open';

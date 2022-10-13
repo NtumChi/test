@@ -59,7 +59,7 @@ class ReimbursementLogin{
                 //write message telling them to enter user/pass again
                 Console.WriteLine("");
             }
-            emp.Add(userId);
+            emp.Add(userId, userName, userPassword);
 
         }
     }
@@ -76,7 +76,7 @@ class ReimbursementLogin{
             //write message telling them to enter user/pass again
             Console.WriteLine("");
         }
-        emp.Add(userId);
+        emp.Add(userId, userName, userPassword);
     }
 
 }

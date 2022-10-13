@@ -1,5 +1,5 @@
 ﻿namespace UserServices;
-using DataAccess;
+using Data;
 public class Employee
 {
     public bool Exists(string userId){
@@ -13,8 +13,8 @@ public class Employee
         }
     }
 
-    public void Add(string userId){
+    public void Add(string userId, string userName, string password){
         Data add = new Data();
-        add.Add(userId);
+        add.Add(userId, userName, password);
     }
 }
