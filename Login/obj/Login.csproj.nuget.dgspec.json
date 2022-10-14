@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\Login\\Login.csproj": {}
+    "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\login\\Login.csproj": {}
   },
   "projects": {
     "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\DataAccess\\DataAccess.csproj": {
@@ -14,12 +14,14 @@
         "outputPath": "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Chi Ntum\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Chi Ntum\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,26 +61,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\Login\\Login.csproj": {
+    "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\login\\Login.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\Login\\Login.csproj",
+        "projectUniqueName": "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\login\\Login.csproj",
         "projectName": "Login",
-        "projectPath": "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\Login\\Login.csproj",
+        "projectPath": "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\login\\Login.csproj",
         "packagesPath": "C:\\Users\\Chi Ntum\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\Login\\obj\\",
+        "outputPath": "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\login\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Chi Ntum\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Chi Ntum\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -116,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -130,12 +134,14 @@
         "outputPath": "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\UserServices\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Chi Ntum\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Chi Ntum\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -173,7 +179,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

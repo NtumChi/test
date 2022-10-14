@@ -28,16 +28,16 @@ class ReimbursementLogin{
             this.userName = ans;
             Console.WriteLine("Login\nPassword:");
             this.userPassword = Console.ReadLine();
-            userId = userName + userPassword;
-            if (emp.Exists(userId)==false){
-                user = "manager";
-            }
+        }
+        userId ="m+" + userName + userPassword;
+        if (emp.Exists(userId)==true){
+            user = "manager";
         }
         //if userId matches manager then use ManagerMenu
         if (user == "manager"){
             ManagerMenu menu = new ManagerMenu(userId);
         }else{
-            ReimbursementForm form = new ReimbursementForm(userId);
+            Employee menu2 = new Employee(userId, userName);
         }
 
     }
