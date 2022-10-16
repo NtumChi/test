@@ -5,7 +5,7 @@ class ReimbursementLogin{
     private string userName;
     private string userPassword;
     private string userId;
-    Employee emp = new Employee();
+    EmployeeMenu emp = new EmployeeMenu();
 
     //runs the initial application
     public void run(){
@@ -23,21 +23,21 @@ class ReimbursementLogin{
 
         if (ans.Equals("yes", StringComparison.OrdinalIgnoreCase)){
             newUserLogin();
-            //create new userId and save
         }else{
             this.userName = ans;
             Console.WriteLine("Login\nPassword:");
             this.userPassword = Console.ReadLine();
         }
-        userId ="m+" + userName + userPassword;
-        if (emp.Exists(userId)==true){
+        userId = userName + userPassword;
+        string manager ="m+" + userName + userPassword;
+        if (emp.Exists(manager)==true){
             user = "manager";
         }
         //if userId matches manager then use ManagerMenu
         if (user == "manager"){
-            ManagerMenu menu = new ManagerMenu(userId);
+            ManagerMenu menu = new ManagerMenu(manager);
         }else{
-            Employee menu2 = new Employee(userId, userName);
+            EmployeeMenu menu2 = new EmployeeMenu(userId, userName);
         }
 
     }
@@ -50,6 +50,10 @@ class ReimbursementLogin{
             newManagerLogin();
         }else{
             this.userName = ans;
+            while(emp.nameExists(userName)==true){
+                Console.WriteLine("Your username exists, please enter another.");
+                userName = Console.ReadLine();
+            }
             Console.WriteLine("Please enter your Password:");
             this.userPassword = Console.ReadLine();
             //add database call for users
@@ -68,6 +72,10 @@ class ReimbursementLogin{
     public void newManagerLogin(){
         Console.WriteLine("Please enter your desired Username:");
         this.userName = Console.ReadLine();
+        while(emp.nameExists(userName)==true){
+            Console.WriteLine("Your username exists, please enter another.");
+            userName = Console.ReadLine();
+        }
         Console.WriteLine("Please enter your Password:");
         this.userPassword = Console.ReadLine();
 

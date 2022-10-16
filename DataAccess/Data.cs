@@ -43,7 +43,25 @@ public class Data
         }
         return ans;
     }
-    public List<Object> GetEmployee(string userName){
+    public string GetName(string userName){
+        string? ans = null;
+        SqlConnection connection = new SqlConnection("Server=tcp:revserver-test.database.windows.net,1433;Initial Catalog=testDB;Persist Security Info=False;User ID=test-admin;Password=Sunshot7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        connection.Open();
+        SqlCommand command = new SqlCommand("SELECT * FROM Employees;", connection);
+        SqlDataReader reader = command.ExecuteReader();
+        if(reader.HasRows){
+            while(reader.Read()){
+                string name = (string) reader["UserName"];
+
+                if (name == userName){
+                    ans = name;
+                }
+            }
+            connection.Close();
+        }
+        return ans;
+    }
+    public List<Object> GetEmployeeForm(string userName){
         List<Object> form = new List<Object>();
         SqlConnection connection = new SqlConnection("Server=tcp:revserver-test.database.windows.net,1433;Initial Catalog=testDB;Persist Security Info=False;User ID=test-admin;Password=Sunshot7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         connection.Open();
@@ -70,6 +88,21 @@ public class Data
         }
         return form;
 
+    }
+    public List<String> GetEmployees(){
+        List<String> emps = new List<String>();
+        SqlConnection connection = new SqlConnection("Server=tcp:revserver-test.database.windows.net,1433;Initial Catalog=testDB;Persist Security Info=False;User ID=test-admin;Password=Sunshot7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        connection.Open();
+        SqlCommand command = new SqlCommand("SELECT UserName from Employees where UserId not like 'm+%';", connection);
+        SqlDataReader reader = command.ExecuteReader();
+        if(reader.HasRows){
+            while(reader.Read()){
+                string name = (string) reader["UserName"];
+                emps.Add(name);
+            }
+            connection.Close();
+        }
+        return emps;
     }
     public List<Object> GetForms(){
         List<Object> forms = new List<Object>();
@@ -130,7 +163,7 @@ public class Data
         List<int> tickets = new List<int>();
         SqlConnection connection = new SqlConnection("Server=tcp:revserver-test.database.windows.net,1433;Initial Catalog=testDB;Persist Security Info=False;User ID=test-admin;Password=Sunshot7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         connection.Open();
-        SqlCommand command = new SqlCommand("SELECT TicketNumber from ReimbursementForm where UserId = @UserId;", connection);
+        SqlCommand command = new SqlCommand("SELECT TicketNumber from ReimbursementForm where UserId = @UserId and Status = 'Closed';", connection);
         command.Parameters.AddWithValue("@UserId", userId);
         SqlDataReader reader = command.ExecuteReader();
         if(reader.HasRows){
@@ -148,7 +181,7 @@ public class Data
         SqlConnection connection = new SqlConnection("Server=tcp:revserver-test.database.windows.net,1433;Initial Catalog=testDB;Persist Security Info=False;User ID=test-admin;Password=Sunshot7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         connection.Open();
         SqlCommand command = new SqlCommand("SELECT * from ReimbursementForm where TicketNumber = @TicketNumber;", connection);
-        command.Parameters.AddWithValue("@TicketNumber", userId);
+        command.Parameters.AddWithValue("@TicketNumber", ticketNumber);
         SqlDataReader reader = command.ExecuteReader();
         if(reader.HasRows){
             while(reader.Read()){
@@ -173,7 +206,7 @@ public class Data
         List<String> users = new List<String>();
         SqlConnection connection = new SqlConnection("Server=tcp:revserver-test.database.windows.net,1433;Initial Catalog=testDB;Persist Security Info=False;User ID=test-admin;Password=Sunshot7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         connection.Open();
-        SqlCommand command = new SqlCommand("SELECT UserName FROM ReimbursementForm,Employees where Status = 'Open';", connection);
+        SqlCommand command = new SqlCommand("SELECT UserName FROM ReimbursementForm,Employees where Status = 'Open' and ReimbursementForm.UserId = Employees.UserId;", connection);
         SqlDataReader reader = command.ExecuteReader();
         if(reader.HasRows){
             while(reader.Read()){
@@ -197,6 +230,14 @@ public class Data
             ans = false;
         connection.Close();
         return ans;
+    }
+    public void PromoteEmployee(string userName){
+        SqlConnection connection = new SqlConnection("Server=tcp:revserver-test.database.windows.net,1433;Initial Catalog=testDB;Persist Security Info=False;User ID=test-admin;Password=Sunshot7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        connection.Open();
+        SqlCommand command = new SqlCommand("Update Employee set UserId = CONCAT('m+', UserId) where UserName = @UserName;", connection);
+        command.Parameters.AddWithValue("@UserName", userName);
+        command.ExecuteNonQuery();
+        connection.Close();
     }
     public void Approve(string userId){
         List<String> users = new List<String>();
@@ -235,7 +276,7 @@ public class Data
         SqlConnection connection = new SqlConnection("Server=tcp:revserver-test.database.windows.net,1433;Initial Catalog=testDB;Persist Security Info=False;User ID=test-admin;Password=Sunshot7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         connection.Open();
         SqlCommand command = new SqlCommand("Insert into ReturnedForm(TicketNumber, Amount, Details, Comment, Status, UserId) values (@TicketNumber, @Amount, @Details, @Comment, 'Open', @UserId);", connection);
-        form = GetEmployee(employeeName);
+        form = GetEmployeeForm(employeeName);
         command.Parameters.AddWithValue("@TicketNumber", (int)form[0]);
         command.Parameters.AddWithValue("@Amount", (decimal)form[1]);
         command.Parameters.AddWithValue("@Details", (string)form[2]);

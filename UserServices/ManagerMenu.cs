@@ -17,6 +17,17 @@ public class ManagerMenu{
         }
     }
     public void UpdateEmployeeStatus(){
+        Data data = new Data();
+        List<string> emps= new List<string>();
+        emps = data.GetEmployees();
+        //writeout employees
+        Console.WriteLine("Which employee would you like to promote?");
+        while (emps.Count()>0){
+            Console.WriteLine(emps[0]);
+            emps.RemoveAt(0);
+        }
+        string ans = Console.ReadLine();
+        data.PromoteEmployee(ans);
 
     }
     public void ReimbursementTickets(){
@@ -32,7 +43,7 @@ public class ManagerMenu{
         }
         string ans = Console.ReadLine();
         List<Object> form = new List<Object>();
-        form = forms.GetEmployee(ans);
+        form = forms.GetEmployeeForm(ans);
         Console.WriteLine("Ticket Number: " + (int)form[0]);
         Console.WriteLine("Amount: " + (decimal)form[1]);
         Console.WriteLine("Details: " + (string)form[2]);

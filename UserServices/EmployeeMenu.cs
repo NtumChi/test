@@ -1,10 +1,10 @@
 ﻿namespace UserServices;
 using Data;
 using System.Collections.Generic;
-public class Employee
+public class EmployeeMenu
 {
-    public Employee(){}
-    public Employee(string userId, string userName){
+    public EmployeeMenu(){}
+    public EmployeeMenu(string userId, string userName){
         Data reimbursement = new Data();
         if(reimbursement.OldFormOpen(userId)==true){
             //display old ticket info with comment
@@ -28,8 +28,17 @@ public class Employee
     public bool Exists(string userId){
         //checks to see if userId is already part of table
         Data? check = new Data();
-        string id = check.GetId(userId);
+        string? id = check.GetId(userId);
         if (id != null){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public bool nameExists(string userName){
+        Data? check = new Data();
+        string? id = check.GetName(userName);
+        if(id != null){
             return true;
         }else{
             return false;
