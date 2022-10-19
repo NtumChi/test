@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Chi Ntum\\documents\\revature\\P1\\Login\\Login.csproj": {}
+    "C:\\Users\\Chi Ntum\\documents\\revature\\P1\\P1-api\\P1-api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Chi Ntum\\documents\\revature\\P1\\Login\\Login.csproj": {
+    "C:\\Users\\Chi Ntum\\documents\\revature\\P1\\P1-api\\P1-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chi Ntum\\documents\\revature\\P1\\Login\\Login.csproj",
-        "projectName": "Login",
-        "projectPath": "C:\\Users\\Chi Ntum\\documents\\revature\\P1\\Login\\Login.csproj",
+        "projectUniqueName": "C:\\Users\\Chi Ntum\\documents\\revature\\P1\\P1-api\\P1-api.csproj",
+        "projectName": "P1-api",
+        "projectPath": "C:\\Users\\Chi Ntum\\documents\\revature\\P1\\P1-api\\P1-api.csproj",
         "packagesPath": "C:\\Users\\Chi Ntum\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chi Ntum\\documents\\revature\\P1\\Login\\obj\\",
+        "outputPath": "C:\\Users\\Chi Ntum\\documents\\revature\\P1\\P1-api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Chi Ntum\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -51,6 +57,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
