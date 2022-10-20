@@ -29,6 +29,10 @@ public class WeatherForecastController : ControllerBase
         })
         .ToArray();
     }
-
+    [HttpPost]
+    public ActionResult<string> Login(string userName, string password){
+        
+        return Created("Created New User Account.", userName);
+    }
   
 }
