@@ -1,16 +1,39 @@
-﻿using UserServices;
+﻿namespace Login;
 
-class ReimbursementLogin{
+using UserServices;
+using System.Text.Json;
+
+public class ReimbursementLogin{
     
     private string userName;
     private string userPassword;
     private string userId;
     EmployeeMenu emp = new EmployeeMenu();
 
-    //runs the initial application
-    public void run(){
-        loginMenu();
+    public ReimbursementLogin(){}
+
+    public bool Exists(string userName){
+        if(emp.Exists(userName)){
+            return true;
+        }else{
+            return false;
+        }
     }
+
+    public void Create(string userName, string password){
+        emp.Add(userName+password, userName, password);
+    }
+
+    public string Serialize(string input){
+        string response = JsonSerializer.Serialize(input);
+        return response;
+    }
+    public string Deserialize(string input){
+        string response = JsonSerializer.Deserialize<string>(input);
+        return response;
+    }
+
+
 
     //the standard login
     public void loginMenu(){

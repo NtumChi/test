@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "yGWGEPirffi4w2nZ8S9nqrEtu3tiSLVeLa4qJPkU3BB3MZMqN5LU+WPbvpMB0GUUoCVVza0KsvnK+9gVWvXI7A==",
+  "dgSpecHash": "xSq5oLiM7iBGeki2XeZGgVMoS6Lw1dA2GQy2JhL5VQ1H6/eKmePtVfFN3BP+C6v9p74qcr0SYUTVb2302dqG+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Chi Ntum\\Documents\\revature\\P1\\P1-api\\P1-api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Chi Ntum\\.nuget\\packages\\ado.net.client\\1.4.3\\ado.net.client.1.4.3.nupkg.sha512",
+    "C:\\Users\\Chi Ntum\\.nuget\\packages\\ado.net.client.annotations\\1.2.0\\ado.net.client.annotations.1.2.0.nupkg.sha512",
+    "C:\\Users\\Chi Ntum\\.nuget\\packages\\ado.net.client.core\\1.4.4\\ado.net.client.core.1.4.4.nupkg.sha512",
+    "C:\\Users\\Chi Ntum\\.nuget\\packages\\ado.net.client.implementation\\1.4.3\\ado.net.client.implementation.1.4.3.nupkg.sha512",
     "C:\\Users\\Chi Ntum\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Chi Ntum\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Chi Ntum\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

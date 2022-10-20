@@ -2,6 +2,67 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "ADO.Net.Client/1.4.3": {
+        "type": "package",
+        "dependencies": {
+          "ADO.Net.Client.Implementation": "1.4.3"
+        },
+        "compile": {
+          "lib/net6.0/ADO.Net.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ADO.Net.Client.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "ADO.Net.Client.Annotations/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/ADO.Net.Client.Annotations.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ADO.Net.Client.Annotations.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "ADO.Net.Client.Core/1.4.4": {
+        "type": "package",
+        "dependencies": {
+          "ADO.Net.Client.Annotations": "1.2.0"
+        },
+        "compile": {
+          "lib/net6.0/ADO.Net.Client.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ADO.Net.Client.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "ADO.Net.Client.Implementation/1.4.3": {
+        "type": "package",
+        "dependencies": {
+          "ADO.Net.Client.Core": "1.4.4"
+        },
+        "compile": {
+          "lib/net6.0/ADO.Net.Client.Implementation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ADO.Net.Client.Implementation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -908,6 +969,102 @@
     }
   },
   "libraries": {
+    "ADO.Net.Client/1.4.3": {
+      "sha512": "9rt2IwW9389/5xFzDkxyp2rRU/+gFLGLJab8iDrI/3ExgTmUmvU/vP6VxUHNUuDI+i92JDiixhVwFXilMiM7vg==",
+      "type": "package",
+      "path": "ado.net.client/1.4.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CONTRIBUTING.md",
+        "LICENSE.md",
+        "README.md",
+        "ado.net.client.1.4.3.nupkg.sha512",
+        "ado.net.client.nuspec",
+        "icon.png",
+        "lib/net461/ADO.Net.Client.dll",
+        "lib/net461/ADO.Net.Client.xml",
+        "lib/net5.0/ADO.Net.Client.dll",
+        "lib/net5.0/ADO.Net.Client.xml",
+        "lib/net6.0/ADO.Net.Client.dll",
+        "lib/net6.0/ADO.Net.Client.xml",
+        "lib/netstandard2.0/ADO.Net.Client.dll",
+        "lib/netstandard2.0/ADO.Net.Client.xml",
+        "lib/netstandard2.1/ADO.Net.Client.dll",
+        "lib/netstandard2.1/ADO.Net.Client.xml"
+      ]
+    },
+    "ADO.Net.Client.Annotations/1.2.0": {
+      "sha512": "UZsCQ6xAM+k4TLmP7Sa0q6wY5wM9wam8P812V7kOAYN909iOUWH+XWlQXgH3MSLDo66CERVnKSzk2/Gxmm12zw==",
+      "type": "package",
+      "path": "ado.net.client.annotations/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CONTRIBUTING.md",
+        "LICENSE.md",
+        "README.md",
+        "ado.net.client.annotations.1.2.0.nupkg.sha512",
+        "ado.net.client.annotations.nuspec",
+        "icon.png",
+        "lib/net5.0/ADO.Net.Client.Annotations.dll",
+        "lib/net5.0/ADO.Net.Client.Annotations.xml",
+        "lib/net6.0/ADO.Net.Client.Annotations.dll",
+        "lib/net6.0/ADO.Net.Client.Annotations.xml",
+        "lib/netstandard2.0/ADO.Net.Client.Annotations.dll",
+        "lib/netstandard2.0/ADO.Net.Client.Annotations.xml"
+      ]
+    },
+    "ADO.Net.Client.Core/1.4.4": {
+      "sha512": "dl0hc4UbSaONKI5mqz+3EmZMYGOqvK6NWcjO+9aE2jOARjfZdX8jy/fVSWvR5/AtbIe133pe8WsnwpmhmOeq2g==",
+      "type": "package",
+      "path": "ado.net.client.core/1.4.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CONTRIBUTING.md",
+        "LICENSE.md",
+        "README.md",
+        "ado.net.client.core.1.4.4.nupkg.sha512",
+        "ado.net.client.core.nuspec",
+        "icon.png",
+        "lib/net461/ADO.Net.Client.Core.dll",
+        "lib/net461/ADO.Net.Client.Core.xml",
+        "lib/net5.0/ADO.Net.Client.Core.dll",
+        "lib/net5.0/ADO.Net.Client.Core.xml",
+        "lib/net6.0/ADO.Net.Client.Core.dll",
+        "lib/net6.0/ADO.Net.Client.Core.xml",
+        "lib/netstandard2.0/ADO.Net.Client.Core.dll",
+        "lib/netstandard2.0/ADO.Net.Client.Core.xml",
+        "lib/netstandard2.1/ADO.Net.Client.Core.dll",
+        "lib/netstandard2.1/ADO.Net.Client.Core.xml"
+      ]
+    },
+    "ADO.Net.Client.Implementation/1.4.3": {
+      "sha512": "/AGuIkki4117uYGBqSoh1PXtsOJy8YmumgK0mIRjtFVoervdd5osXg7cLgvv8ov+s9PQ0qEavDxI+pU2520m4Q==",
+      "type": "package",
+      "path": "ado.net.client.implementation/1.4.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CONTRIBUTING.md",
+        "LICENSE.md",
+        "README.md",
+        "ado.net.client.implementation.1.4.3.nupkg.sha512",
+        "ado.net.client.implementation.nuspec",
+        "icon.png",
+        "lib/net461/ADO.Net.Client.Implementation.dll",
+        "lib/net461/ADO.Net.Client.Implementation.xml",
+        "lib/net5.0/ADO.Net.Client.Implementation.dll",
+        "lib/net5.0/ADO.Net.Client.Implementation.xml",
+        "lib/net6.0/ADO.Net.Client.Implementation.dll",
+        "lib/net6.0/ADO.Net.Client.Implementation.xml",
+        "lib/netstandard2.0/ADO.Net.Client.Implementation.dll",
+        "lib/netstandard2.0/ADO.Net.Client.Implementation.xml",
+        "lib/netstandard2.1/ADO.Net.Client.Implementation.dll",
+        "lib/netstandard2.1/ADO.Net.Client.Implementation.xml"
+      ]
+    },
     "Azure.Core/1.24.0": {
       "sha512": "+/qI1j2oU1S4/nvxb2k/wDsol00iGf1AyJX5g3epV7eOpQEP/2xcgh/cxgKMeFgn3U2fmgSiBnQZdkV+l5y0Uw==",
       "type": "package",
@@ -2827,6 +2984,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "ADO.Net.Client >= 1.4.3",
       "Login >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -2874,6 +3032,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "ADO.Net.Client": {
+            "target": "Package",
+            "version": "[1.4.3, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.2.3, )"

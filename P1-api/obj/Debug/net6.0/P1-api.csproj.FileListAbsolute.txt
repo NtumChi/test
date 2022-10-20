@@ -65,3 +65,7 @@ C:\Users\Chi Ntum\Documents\revature\P1\P1-api\obj\Debug\net6.0\refint\P1-api.dl
 C:\Users\Chi Ntum\Documents\revature\P1\P1-api\obj\Debug\net6.0\P1-api.pdb
 C:\Users\Chi Ntum\Documents\revature\P1\P1-api\obj\Debug\net6.0\P1-api.genruntimeconfig.cache
 C:\Users\Chi Ntum\Documents\revature\P1\P1-api\obj\Debug\net6.0\ref\P1-api.dll
+C:\Users\Chi Ntum\Documents\revature\P1\P1-api\bin\Debug\net6.0\ADO.Net.Client.dll
+C:\Users\Chi Ntum\Documents\revature\P1\P1-api\bin\Debug\net6.0\ADO.Net.Client.Annotations.dll
+C:\Users\Chi Ntum\Documents\revature\P1\P1-api\bin\Debug\net6.0\ADO.Net.Client.Core.dll
+C:\Users\Chi Ntum\Documents\revature\P1\P1-api\bin\Debug\net6.0\ADO.Net.Client.Implementation.dll

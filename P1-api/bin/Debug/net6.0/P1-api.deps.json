@@ -8,11 +8,53 @@
     ".NETCoreApp,Version=v6.0": {
       "P1-api/1.0.0": {
         "dependencies": {
+          "ADO.Net.Client": "1.4.3",
           "Login": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
           "P1-api.dll": {}
+        }
+      },
+      "ADO.Net.Client/1.4.3": {
+        "dependencies": {
+          "ADO.Net.Client.Implementation": "1.4.3"
+        },
+        "runtime": {
+          "lib/net6.0/ADO.Net.Client.dll": {
+            "assemblyVersion": "1.4.3.0",
+            "fileVersion": "1.4.3.0"
+          }
+        }
+      },
+      "ADO.Net.Client.Annotations/1.2.0": {
+        "runtime": {
+          "lib/net6.0/ADO.Net.Client.Annotations.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      },
+      "ADO.Net.Client.Core/1.4.4": {
+        "dependencies": {
+          "ADO.Net.Client.Annotations": "1.2.0"
+        },
+        "runtime": {
+          "lib/net6.0/ADO.Net.Client.Core.dll": {
+            "assemblyVersion": "1.4.4.0",
+            "fileVersion": "1.4.4.0"
+          }
+        }
+      },
+      "ADO.Net.Client.Implementation/1.4.3": {
+        "dependencies": {
+          "ADO.Net.Client.Core": "1.4.4"
+        },
+        "runtime": {
+          "lib/net6.0/ADO.Net.Client.Implementation.dll": {
+            "assemblyVersion": "1.4.3.0",
+            "fileVersion": "1.4.3.0"
+          }
         }
       },
       "Azure.Core/1.24.0": {
@@ -539,6 +581,34 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "ADO.Net.Client/1.4.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9rt2IwW9389/5xFzDkxyp2rRU/+gFLGLJab8iDrI/3ExgTmUmvU/vP6VxUHNUuDI+i92JDiixhVwFXilMiM7vg==",
+      "path": "ado.net.client/1.4.3",
+      "hashPath": "ado.net.client.1.4.3.nupkg.sha512"
+    },
+    "ADO.Net.Client.Annotations/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UZsCQ6xAM+k4TLmP7Sa0q6wY5wM9wam8P812V7kOAYN909iOUWH+XWlQXgH3MSLDo66CERVnKSzk2/Gxmm12zw==",
+      "path": "ado.net.client.annotations/1.2.0",
+      "hashPath": "ado.net.client.annotations.1.2.0.nupkg.sha512"
+    },
+    "ADO.Net.Client.Core/1.4.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dl0hc4UbSaONKI5mqz+3EmZMYGOqvK6NWcjO+9aE2jOARjfZdX8jy/fVSWvR5/AtbIe133pe8WsnwpmhmOeq2g==",
+      "path": "ado.net.client.core/1.4.4",
+      "hashPath": "ado.net.client.core.1.4.4.nupkg.sha512"
+    },
+    "ADO.Net.Client.Implementation/1.4.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/AGuIkki4117uYGBqSoh1PXtsOJy8YmumgK0mIRjtFVoervdd5osXg7cLgvv8ov+s9PQ0qEavDxI+pU2520m4Q==",
+      "path": "ado.net.client.implementation/1.4.3",
+      "hashPath": "ado.net.client.implementation.1.4.3.nupkg.sha512"
     },
     "Azure.Core/1.24.0": {
       "type": "package",
