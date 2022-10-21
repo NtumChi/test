@@ -25,6 +25,17 @@ public class EmployeeMenu
             GetClosedTickets(userId);
         }
     }
+    public bool OldFormOpen(string userId){
+        Data reimbursement = new Data();
+        if(reimbursement.OldFormOpen(userId)==true){
+            return true;
+        }
+        return false;
+    }
+    public List<Object> GetOldForm(string userId){
+        Data reimbursement = new Data();
+        return reimbursement.GetOldForm(userId);
+    }
     public bool Exists(string userId){
         //checks to see if userId is already part of table
         Data? check = new Data();
@@ -45,9 +56,9 @@ public class EmployeeMenu
         }
     }
 
-    public void Add(string userId, string userName, string password){
+    public void Add(string userID, string userName, string password){
         Data add = new Data();
-        add.Add(userId, userName, password);
+        add.Add(userID, userName, password);
     }
     public void Update(decimal amount, string details, string userId){
         Console.WriteLine("Would you like to update the Amount? Yes/No");
@@ -66,12 +77,15 @@ public class EmployeeMenu
         reimbursement.UpdateForm(amount, details, userId);
     }
 
-    public void GetClosedTickets(string userId){
+    public List<int> GetClosedTickets(string userId){
         Data forms = new Data();
         List<int> tickets = new List<int>();
         List<Object> form = new List<Object>();
         tickets = forms.GetClosedTickets(userId);
-        Console.WriteLine("Which ticket would you like to view?");
+        
+        return tickets;
+
+        /*Console.WriteLine("Which ticket would you like to view?");
         while(tickets.Count()>0){
             Console.WriteLine(tickets[0]);
             tickets.RemoveAt(0);
@@ -80,6 +94,11 @@ public class EmployeeMenu
         form = forms.GetClosedForm(ans,userId);
         Console.WriteLine("TicketNumber: " + (int)form[0]);
         Console.WriteLine("Amount: " + (decimal) form[1]);
-        Console.WriteLine("Details: " + (string) form[2]);
+        Console.WriteLine("Details: " + (string) form[2]);*/
+    }
+
+    public List<Object> GetClosedForm(int ticketNumber, string userId){
+        Data form = new Data();
+        return form.GetClosedForm(ticketNumber,userId);
     }
 }

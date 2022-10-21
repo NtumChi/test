@@ -130,6 +130,35 @@ public class Data
         }
         return forms;
     }
+        public List<Object> GetForm(string userId){
+        List<Object> form = new List<Object>();
+        SqlConnection connection = new SqlConnection("Server=tcp:revserver-test.database.windows.net,1433;Initial Catalog=testDB;Persist Security Info=False;User ID=test-admin;Password=Sunshot7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        connection.Open();
+        SqlCommand command = new SqlCommand("SELECT * FROM ReimbursementForm where UserId = @UserId and Status = 'Open';", connection);
+        command.Parameters.AddWithValue("@UserId", userId);
+        SqlDataReader reader = command.ExecuteReader();
+        if(reader.HasRows){
+            while(reader.Read()){
+                int ticketNumber = (int) reader["TicketNumber"];
+                decimal amount = (decimal) reader["Amount"];
+                string? details = (string) reader["Details"];
+                string comment = (string) reader["Comment"];
+                string id = (string) reader["UserId"];
+
+                form.Add(ticketNumber);
+                form.Add(amount);
+                if (details!=null){
+                    form.Add(details);
+                }else{
+                    form.Add("");
+                }
+                form.Add(comment);
+                form.Add(id);
+            }
+            connection.Close();
+        }
+        return form;
+    }
     public List<Object> GetOldForm(string userId){
         List<Object> form = new List<Object>();
         SqlConnection connection = new SqlConnection("Server=tcp:revserver-test.database.windows.net,1433;Initial Catalog=testDB;Persist Security Info=False;User ID=test-admin;Password=Sunshot7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
@@ -251,11 +280,11 @@ public class Data
         command.ExecuteNonQuery();
         connection.Close();
     }
-    public void Add(string userId, string userName, string password){
+    public void Add(string userID, string userName, string password){
         SqlConnection connection = new SqlConnection("Server=tcp:revserver-test.database.windows.net,1433;Initial Catalog=testDB;Persist Security Info=False;User ID=test-admin;Password=Sunshot7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         connection.Open();
         SqlCommand command = new SqlCommand("Insert into Employees(UserName, Password, UserId) values (@UserName, @Password, @UserId);", connection);
-        command.Parameters.AddWithValue("@UserId", userId);
+        command.Parameters.AddWithValue("@UserId", userID);
         command.Parameters.AddWithValue("@UserName", userName);
         command.Parameters.AddWithValue("@Password", password);
         command.ExecuteNonQuery();

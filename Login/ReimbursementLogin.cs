@@ -2,6 +2,7 @@
 
 using UserServices;
 using System.Text.Json;
+using System.Collections.Generic;
 
 public class ReimbursementLogin{
     
@@ -13,15 +14,16 @@ public class ReimbursementLogin{
     public ReimbursementLogin(){}
 
     public bool Exists(string userName){
-        if(emp.Exists(userName)){
+        if(emp.nameExists(userName)){
             return true;
         }else{
             return false;
         }
     }
 
-    public void Create(string userName, string password){
+    public string Create(string userName, string password){
         emp.Add(userName+password, userName, password);
+        return userName;
     }
 
     public string Serialize(string input){
@@ -32,7 +34,30 @@ public class ReimbursementLogin{
         string response = JsonSerializer.Deserialize<string>(input);
         return response;
     }
+    public List<Object> Form(decimal amount, string details, string userId){
+        ReimbursementForm form = new ReimbursementForm();
+        return form.AddForm(amount, details, userId);
+    }
 
+    public bool OldFormOpen(string userId){
+        EmployeeMenu emp= new EmployeeMenu();
+        if(emp.OldFormOpen(userId)==true){
+            return true;
+        }
+        return false;
+    }
+    public List<Object> ReturnedForm(string userId){
+        EmployeeMenu emp = new EmployeeMenu();
+        return emp.GetOldForm(userId);
+    }
+    public List<int> ClosedTickets(string userId){
+        EmployeeMenu emp = new EmployeeMenu();
+        return emp.GetClosedTickets(userId);
+    }
+    public List<Object> ClosedForm(int ticketNumber, string userId){
+        EmployeeMenu emp = new EmployeeMenu();
+        return emp.GetClosedForm(ticketNumber, userId);
+    }
 
 
     //the standard login

@@ -22,11 +22,10 @@ public class ReimbursementForm{
         Data form = new Data();
         form.AddForm(amount, details, userId);
     }
-    public ReimbursementForm(string userId,string details,decimal amount, int ticketNumber){
-        this.userId = userId;
-        this.details = details;
-        this.amount = amount;
-        this.ticketNumber = ticketNumber;
+    public List<Object> AddForm(decimal amount, string details, string userId){
+        Data form = new Data();
+        form.AddForm(amount, details, userId);
+        return form.GetForm(userId);
     }
 
 }
