@@ -142,7 +142,6 @@ public class Data
                 int ticketNumber = (int) reader["TicketNumber"];
                 decimal amount = (decimal) reader["Amount"];
                 string? details = (string) reader["Details"];
-                string comment = (string) reader["Comment"];
                 string id = (string) reader["UserId"];
 
                 form.Add(ticketNumber);
@@ -152,7 +151,6 @@ public class Data
                 }else{
                     form.Add("");
                 }
-                form.Add(comment);
                 form.Add(id);
             }
             connection.Close();
@@ -268,15 +266,15 @@ public class Data
         command.ExecuteNonQuery();
         connection.Close();
     }
-    public void Approve(string userId){
+    public void Approve(int ticketNumber){
         List<String> users = new List<String>();
         SqlConnection connection = new SqlConnection("Server=tcp:revserver-test.database.windows.net,1433;Initial Catalog=testDB;Persist Security Info=False;User ID=test-admin;Password=Sunshot7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         connection.Open();
-        SqlCommand command = new SqlCommand("Update ReimbursementForm set Status = 'Closed' where UserId = @UserId;", connection);
-        command.Parameters.AddWithValue("@UserId", userId);
+        SqlCommand command = new SqlCommand("Update ReimbursementForm set Status = 'Closed' where TicketNumber = @TicketNumber;", connection);
+        command.Parameters.AddWithValue("@TicketNumber", ticketNumber);
         command.ExecuteNonQuery();
-        command = new SqlCommand("Update ReturnedForm set Status = 'Closed' where UserId = @UserId;", connection);
-        command.Parameters.AddWithValue("@UserId", userId);
+        command = new SqlCommand("Update ReturnedForm set Status = 'Closed' where TicketNumber = @TicketNumber;", connection);
+        command.Parameters.AddWithValue("@Ticketnumber", ticketNumber);
         command.ExecuteNonQuery();
         connection.Close();
     }

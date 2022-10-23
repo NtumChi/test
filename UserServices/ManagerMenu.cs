@@ -4,6 +4,8 @@ using System.Collections.Generic;
 public class ManagerMenu{
 
     private string userId;
+
+    public ManagerMenu(){}
     public ManagerMenu(string userId){
         Console.WriteLine("Manager Menu:\n\nView Reimbursement tickets(1)\nUpdate Employee Status(2)");
         string ans = Console.ReadLine();
@@ -30,9 +32,26 @@ public class ManagerMenu{
         data.PromoteEmployee(ans);
 
     }
+
+    public List<string> UsersOpen(){
+        Data forms = new Data();
+        return forms.GetUsers();
+    }
+    public List<Object> Form(string user){
+        Data form = new Data();
+        return form.GetEmployeeForm(user);
+    }
+    public void Approve(int ticketNumber){
+        Data form = new Data();
+        form.Approve(ticketNumber);
+    }
+    public void SendBack(int ticketNumber, string comment, string user){
+        Data form = new Data();
+        form.SendBack(ticketNumber, comment, user);
+    }
     public void ReimbursementTickets(){
         //do lookup of ticketform
-        List <String> data = new List<String>();
+        List <string> data = new List<string>();
         Data forms = new Data();
         data = forms.GetUsers();
         Console.WriteLine("Which employee would you like to view?");
@@ -49,11 +68,12 @@ public class ManagerMenu{
         Console.WriteLine("Details: " + (string)form[2]);
 
         string employeeName = ans;
+        int ticketNumber = (int)form[0];
         string employeeId = (string)form[3];
         Console.WriteLine("Approve(1)       SendBack[with comment](2)");
         ans = Console.ReadLine();
         if(ans == "1"){
-            forms.Approve(employeeId);
+            forms.Approve(ticketNumber);
         }else{
             //logic to send back with comment
             if(forms.OldFormOpen(employeeId)==true){

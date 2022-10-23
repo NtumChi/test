@@ -6,9 +6,14 @@ using System.Collections.Generic;
 
 public class ReimbursementLogin{
     
+    public string user{get;set;}
     private string userName;
     private string userPassword;
-    private string userId;
+    public string userId{get;set;}
+    public decimal amount{get;set;}
+    public string details{get;set;}
+    public int ticketNumber{get;set;}
+    public string comment{get;set;}
     EmployeeMenu emp = new EmployeeMenu();
 
     public ReimbursementLogin(){}
@@ -26,13 +31,21 @@ public class ReimbursementLogin{
         return userName;
     }
 
-    public string Serialize(string input){
-        string response = JsonSerializer.Serialize(input);
-        return response;
+    public List<string> UsersOpen(){
+        ManagerMenu users = new ManagerMenu();
+        return users.UsersOpen();
     }
-    public string Deserialize(string input){
-        string response = JsonSerializer.Deserialize<string>(input);
-        return response;
+    public List<Object> UserForm(string user){
+        ManagerMenu form = new ManagerMenu();
+        return form.Form(user);
+    }
+    public void Approve(int ticketNumber){
+        ManagerMenu ticket = new ManagerMenu();
+        ticket.Approve(ticketNumber);
+    }
+    public void SendBack(int ticketNumber, string comment, string user){
+        ManagerMenu ticket = new ManagerMenu();
+        ticket.SendBack(ticketNumber,comment, user);
     }
     public List<Object> Form(decimal amount, string details, string userId){
         ReimbursementForm form = new ReimbursementForm();
