@@ -18,7 +18,14 @@ public class ReimbursementLogin{
 
     public ReimbursementLogin(){}
 
-    public bool Exists(string userName){
+    public bool IdExists(string userId){
+        if(emp.Exists(userId)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public bool NameExists(string userName){
         if(emp.nameExists(userName)){
             return true;
         }else{
@@ -63,9 +70,9 @@ public class ReimbursementLogin{
         EmployeeMenu emp = new EmployeeMenu();
         return emp.GetOldForm(userId);
     }
-    public void UpdateForm(decimal amount, string details, string userId){
+    public void UpdateForm(string details, int ticketNumber){
         EmployeeMenu emp = new EmployeeMenu();
-        emp.UpdateForm(amount,details,userId);
+        emp.UpdateForm(details,ticketNumber);
     }
     public List<int> ClosedTickets(string userId){
         EmployeeMenu emp = new EmployeeMenu();

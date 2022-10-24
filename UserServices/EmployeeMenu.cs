@@ -63,9 +63,10 @@ public class EmployeeMenu
     public void Update(decimal amount, string details, string userId){
         Console.WriteLine("Would you like to update the Amount? Yes/No");
         string ans = Console.ReadLine();
+        int ticketNumber = 0;
         if (ans == "Yes"){
-            Console.WriteLine("Please enter a new Amount.");
-            amount = decimal.Parse(Console.ReadLine());
+            Console.WriteLine("Whats the ticket number?");
+            ticketNumber = int.Parse(Console.ReadLine());
         }
         Console.WriteLine("Would you like to update the Details? Yes/No");
         ans = Console.ReadLine();
@@ -74,12 +75,12 @@ public class EmployeeMenu
             details = Console.ReadLine();
         }
         Data reimbursement= new Data();
-        reimbursement.UpdateForm(amount, details, userId);
+        reimbursement.UpdateForm(details, ticketNumber);
     }
 
-    public void UpdateForm(decimal amount, string details, string userId){
+    public void UpdateForm(string details, int ticketNumber){
         Data reimbursement = new Data();
-        reimbursement.UpdateForm(amount, details, userId);
+        reimbursement.UpdateForm(details, ticketNumber);
     }
 
     public List<int> GetClosedTickets(string userId){

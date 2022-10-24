@@ -322,13 +322,12 @@ public class Data
         command.ExecuteNonQuery();
         connection.Close();
     }
-    public void UpdateForm(decimal amount, string details, string userId){
+    public void UpdateForm(string details, int ticketNumber){
         SqlConnection connection = new SqlConnection("Server=tcp:revserver-test.database.windows.net,1433;Initial Catalog=testDB;Persist Security Info=False;User ID=test-admin;Password=Sunshot7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         connection.Open();
-        SqlCommand command = new SqlCommand("Update ReimbursementForm set Amount = @Amount, Details = @Details where UserId = @UserId;", connection);
-        command.Parameters.AddWithValue("@Amount", amount);
+        SqlCommand command = new SqlCommand("Update ReimbursementForm set Details = @Details where TicketNumber = @TicketNumber;", connection);
         command.Parameters.AddWithValue("@Details", details);
-        command.Parameters.AddWithValue("@UserId", userId);
+        command.Parameters.AddWithValue("@TicketNumber", ticketNumber);
         command.ExecuteNonQuery();
         connection.Close();
     }

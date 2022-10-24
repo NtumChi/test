@@ -46,7 +46,7 @@ public class P1Controller : ControllerBase
         string password = user.password;
         userId = userName+password;
 
-        if (register.Exists(userName) == true){
+        if (register.NameExists(userName) == true){
             return Unauthorized("User already exists");
         }else{
             return Created("User Created", register.Create(userName, password));
@@ -62,7 +62,7 @@ public class P1Controller : ControllerBase
         userId = userName+password;
 
         
-        if (login.Exists(userName) == true){
+        if (login.NameExists(userName) == true){
             return Ok(userName);
         }else{
             
@@ -85,7 +85,7 @@ public class P1Controller : ControllerBase
     [HttpPost]
     [Route("UpdateForm/")]
     public ActionResult UpdateForm(ReimbursementLogin form){
-        form.UpdateForm(form.amount, form.details, form.userId);
+        form.UpdateForm(form.details, form.ticketNumber);
         return Ok("Form updated.");
     }
 
@@ -104,39 +104,43 @@ public class P1Controller : ControllerBase
     [Route("UsersOpen/")]
     public IEnumerable<string>? UsersOpen(ReimbursementLogin manager){
         if(manager.userId.Contains("m+")){
-            return manager.UsersOpen();
-        }else{
-            return null;
+            if(manager.IdExists(manager.userId)){
+                return manager.UsersOpen();
+            }
         }
+        return null;
     }
     [HttpGet]
     [Route("OpenForm/")]
     public IEnumerable<Object>? OpenForm(ReimbursementLogin manager){
         if(manager.userId.Contains("m+")){
-            return manager.UserForm(manager.user);
-        }else{
-            return null;
+            if(manager.IdExists(manager.userId)){
+                return manager.UserForm(manager.user);
+            }
         }
+        return null;
     }
     [HttpPost]
     [Route("Approve/")]
     public ActionResult Approve(ReimbursementLogin ticketNumber){
         if(ticketNumber.userId.Contains("m+")){
-            ticketNumber.Approve(ticketNumber.ticketNumber);
-            return  Ok("The form has been approved.");
-        }else{
-            return Unauthorized();
+            if(ticketNumber.IdExists(ticketNumber.userId)){
+                ticketNumber.Approve(ticketNumber.ticketNumber);
+                return  Ok("The form has been approved.");
+            }
         }
+        return Unauthorized();
     }
     [HttpPost]
     [Route("SendBack/")]
     public ActionResult SendBack(ReimbursementLogin ticketNumber){
         if(ticketNumber.userId.Contains("m+")){
-            ticketNumber.SendBack(ticketNumber.ticketNumber, ticketNumber.comment, ticketNumber.user);
-            return Ok("sent back.");
-        }else{
-            return Unauthorized();
+            if(ticketNumber.IdExists(ticketNumber.userId)){
+                ticketNumber.SendBack(ticketNumber.ticketNumber, ticketNumber.comment, ticketNumber.user);
+                return Ok("sent back.");
+            }
         }
+        return Unauthorized();
     }
   
 }

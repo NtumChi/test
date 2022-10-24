@@ -22,6 +22,7 @@ Create Table ReturnedForm(
 );
 
 select * from Employees;
+select * from ReimbursementForm;
 Insert into ReimbursementForm(UserId) values (@UserId);
 Insert into ReimbursementForm(Amount, Details, UserId, Status) values (@Amount, @Details, @UserId,'Open');
 Insert into Employees(UserName, Password, UserId) values (@UserName, @Password, @UserId);
