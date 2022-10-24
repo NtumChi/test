@@ -21,7 +21,7 @@ Create Table ReturnedForm(
     UserId nvarchar(200) foreign key references Employees(UserId)
 );
 
-select * from ReimbursementForm;
+select * from Employees;
 Insert into ReimbursementForm(UserId) values (@UserId);
 Insert into ReimbursementForm(Amount, Details, UserId, Status) values (@Amount, @Details, @UserId,'Open');
 Insert into Employees(UserName, Password, UserId) values (@UserName, @Password, @UserId);
@@ -39,5 +39,9 @@ Update ReimbursementForm set Amount = @Amount, Details = @Details, Status = 'Ope
 Update ReimbursementForm set Amount = @Amount, Details = @Details where UserId = @UserId;
 Update ReimbursementForm set Status = 'Closed' where UserId = @UserId;
 Update ReturnedForm set Status = 'Closed' where UserId = @UserId;
+Update ReimbursementForm set Status = 'Closed' where TicketNumber = @TicketNumber;
+Update ReturnedForm set Status = 'Closed' where TicketNumber = @TicketNumber;
 Update ReturnedForm set Comment = @Comment where UserId = @UserId;
 Update Employee set UserId = CONCAT('m+', UserId) where UserName = @UserName;
+ 
+ insert into employees values ('test', 'test', 'testtest');

@@ -77,6 +77,11 @@ public class EmployeeMenu
         reimbursement.UpdateForm(amount, details, userId);
     }
 
+    public void UpdateForm(decimal amount, string details, string userId){
+        Data reimbursement = new Data();
+        reimbursement.UpdateForm(amount, details, userId);
+    }
+
     public List<int> GetClosedTickets(string userId){
         Data forms = new Data();
         List<int> tickets = new List<int>();

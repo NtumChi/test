@@ -63,6 +63,10 @@ public class ReimbursementLogin{
         EmployeeMenu emp = new EmployeeMenu();
         return emp.GetOldForm(userId);
     }
+    public void UpdateForm(decimal amount, string details, string userId){
+        EmployeeMenu emp = new EmployeeMenu();
+        emp.UpdateForm(amount,details,userId);
+    }
     public List<int> ClosedTickets(string userId){
         EmployeeMenu emp = new EmployeeMenu();
         return emp.GetClosedTickets(userId);

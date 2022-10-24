@@ -82,6 +82,13 @@ public class P1Controller : ControllerBase
         return form.ReturnedForm(form.userId);
     }
 
+    [HttpPost]
+    [Route("UpdateForm/")]
+    public ActionResult UpdateForm(ReimbursementLogin form){
+        form.UpdateForm(form.amount, form.details, form.userId);
+        return Ok("Form updated.");
+    }
+
     [HttpGet]
     [Route("ClosedTickets/")]
     public IEnumerable<int> ClosedTickets(ReimbursementLogin tickets){
@@ -116,7 +123,7 @@ public class P1Controller : ControllerBase
     public ActionResult Approve(ReimbursementLogin ticketNumber){
         if(ticketNumber.userId.Contains("m+")){
             ticketNumber.Approve(ticketNumber.ticketNumber);
-            return  Ok();
+            return  Ok("The form has been approved.");
         }else{
             return Unauthorized();
         }
